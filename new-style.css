@@ -1,0 +1,225 @@
+/* Основни стилове за сайта */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* Основен хедър с фон и анимации */
+header {
+    background-color: #ff7f50; /* Оранжев цвят, свързан с готвенето */
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    animation: headerAnimation 2s ease-in-out;
+}
+
+header h1 {
+    font-family: 'Gravitas One', cursive;
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    animation: textGlow 1.5s ease-in-out infinite alternate;
+    background: linear-gradient(45deg, #ff6347, #ff4500);
+    -webkit-background-clip: text;
+    color: white;
+    text-shadow: 0px 0px 20px rgba(255, 99, 71, 0.8);
+}
+
+/* Анимация за заглавието на хедъра */
+@keyframes headerAnimation {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Навигация */
+nav {
+    background-color: #ff7f50;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff6347;
+    text-shadow: 0px 0px 15px rgba(255, 99, 71, 0.7);
+}
+
+/* Основна част на сайта */
+main {
+    padding: 40px 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #ff7f50;
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Секциите с рецепти */
+article {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: slideInUp 1.5s ease-out;
+}
+
+article:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Анимации за всяка рецепта */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Изображения в рецептите */
+article img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+img {
+    width: 300px;  /* Тук можеш да зададеш желаната ширина */
+    height: 200px; /* Тук можеш да зададеш желаната височина */
+    object-fit: cover; /* Това ще запази съотношението на изображението, но ще го изреже, за да запълни областта */
+}
+
+
+/* Текст в рецептите */
+article h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: bold;
+    animation: textSlideUp 1s ease-in-out;
+}
+
+/* Анимация за текста в рецептите */
+@keyframes textSlideUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Бутон за рецепта */
+button {
+    background-color: #ff6347;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 99, 71, 0.2);
+}
+
+button:hover {
+    background-color: #ff4500;
+    box-shadow: 0 5px 25px rgba(255, 99, 71, 0.4);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 50px;
+}
+
+/* Респонсивност */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3rem;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    article {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
